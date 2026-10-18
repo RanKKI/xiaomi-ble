@@ -2361,6 +2361,15 @@ class XiaomiBluetoothDeviceData(BluetoothData):
                     break
                 this_start = payload_start + 3
                 dobject = payload[this_start:next_start]
+                
+                _LOGGER.info(
+                    "[%s], type: %s object: %s, data: %s",
+                    identifier,
+                    obj_typecode,
+                    dobject,
+                    data.hex(),
+                )
+                
                 if (
                     dobject
                     and obj_length != 0
